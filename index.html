@@ -48,31 +48,110 @@
         </div>
 
         <div class="faq-item">
-          <h3>O que significa o número no lado direito?</h3>
-          <p>O badge ciano mostra quantas tarefas você tem ainda pendentes para concluir.</p>
+          <h3>Como definir prioridade e data de vencimento?</h3>
+          <p>Use o menu suspenso para escolher a prioridade (Alta, Média, Baixa) e o campo de data antes de clicar em "Adicionar Tarefa". Cada tarefa exibirá essas informações.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Como filtrar minhas tarefas?</h3>
+          <p>Use os botões de filtro no topo: "Todas", "Pendentes", "Concluídas" ou filtre por prioridade (🔴 Alta, 🟡 Média, 🟢 Baixa).</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Como usar a busca?</h3>
+          <p>Digite no campo "🔍 Buscar tarefas..." para encontrar tarefas rapidamente. A busca funciona em tempo real!</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Como trocar de tema (claro/escuro)?</h3>
+          <p>Clique no botão 🌙 (tema escuro) ou ☀️ (tema claro) no canto superior direito do cabeçalho.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Como exportar meus dados?</h3>
+          <p>Clique no botão 📥 no cabeçalho. Um arquivo JSON com todas as suas tarefas será baixado.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Quais são as estatísticas que vejo?</h3>
+          <p>Os cards mostram: Tarefas Pendentes, Tarefas Concluídas, Taxa de Conclusão (%) e Total de Tarefas.</p>
         </div>
       </div>
     </div>
 
     <header>
-    <h1>GDG Londrina - MVP de Tarefas</h1>
+    <div class="header-content">
+      <h1>GDG Londrina - Gerenciador de Tarefas</h1>
+      <div class="header-controls">
+        <button id="btn-tema" class="btn-tema" aria-label="Alternar tema" title="Alternar tema claro/escuro">🌙</button>
+        <button id="btn-exportar" class="btn-exportar" aria-label="Exportar dados" title="Exportar em JSON">📥</button>
+      </div>
+    </div>
   </header>
 
   <main class="container">
+    <!-- Filtros e Busca Avançada -->
+    <section class="filtros" aria-label="Filtros de tarefas">
+      <div class="search-box">
+        <input id="busca" type="text" placeholder="🔍 Buscar tarefas..." aria-label="Buscar tarefas" />
+      </div>
+      <div class="filter-buttons">
+        <button id="filtro-todas" class="btn-filtro ativo" data-filtro="todas">Todas</button>
+        <button id="filtro-pendentes" class="btn-filtro" data-filtro="pendentes">Pendentes</button>
+        <button id="filtro-concluidas" class="btn-filtro" data-filtro="concluidas">Concluídas</button>
+        <button id="filtro-alta" class="btn-filtro prioridade-alta" data-filtro="alta">🔴 Alta</button>
+        <button id="filtro-media" class="btn-filtro prioridade-media" data-filtro="media">🟡 Média</button>
+        <button id="filtro-baixa" class="btn-filtro prioridade-baixa" data-filtro="baixa">🟢 Baixa</button>
+      </div>
+    </section>
+
     <!-- Adicionar Tarefa -->
     <section class="nova-tarefa" aria-label="Adicionar nova tarefa">
-      <input id="nova-tarefa" type="text" placeholder="Digite a descrição da tarefa" aria-label="Nova tarefa" />
-      <button id="btn-adicionar" type="button">Adicionar Tarefa:</button>
+      <div class="input-group">
+        <input id="nova-tarefa" type="text" placeholder="Digite a descrição da tarefa" aria-label="Nova tarefa" />
+      </div>
+      <div class="tarefa-options">
+        <select id="prioridade" aria-label="Prioridade da tarefa">
+          <option value="media">🟡 Média</option>
+          <option value="alta">🔴 Alta</option>
+          <option value="baixa">🟢 Baixa</option>
+        </select>
+        <input id="data-vencimento" type="date" aria-label="Data de vencimento" />
+      </div>
+      <button id="btn-adicionar" type="button">+ Adicionar Tarefa</button>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats-container">
+      <div class="stat-card">
+        <span class="stat-label">Pendentes</span>
+        <span class="stat-value" id="stat-pendentes">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Concluídas</span>
+        <span class="stat-value" id="stat-concluidas">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Taxa Conclusão</span>
+        <span class="stat-value" id="stat-taxa">0%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Total</span>
+        <span class="stat-value" id="stat-total">0</span>
+      </div>
     </section>
 
     <!-- Contadores -->
-    <section class="contadores" aria-label="Contadores de tarefas" style="margin: 16px 0;">
+    <section class="contadores" aria-label="Contadores de tarefas">
       <span>Pendentes: <strong id="contador-pendentes">0</strong></span>
       <span>Concluídas: <strong id="contador-concluidas">0</strong></span>
     </section>
 
     <!-- Lista de Tarefas -->
     <section class="lista-tarefas" aria-label="Lista de tarefas">
+      <div class="lista-vazia" id="lista-vazia">
+        <p>✨ Nenhuma tarefa encontrada. Crie sua primeira!</p>
+      </div>
       <ul id="lista-tarefas" role="list"></ul>
     </section>
 
