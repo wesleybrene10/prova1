@@ -32,19 +32,66 @@ html.light-theme {
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
+html.light-theme, html.light-theme body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 25%, #f8fafc 50%, #dbeafe 75%, #f8fafc 100%) !important;
+  background-size: 400% 400% !important;
+  background-attachment: fixed !important;
+  animation: gradientShiftLight 15s ease infinite !important;
+}
+
+@keyframes gradientShiftLight {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 * { box-sizing: border-box; }
+
+/* Animação de Fundo Dinâmico */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 html, body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: var(--bg);
+  background: linear-gradient(135deg, #0f172a 0%, #1a2f4a 25%, #0f172a 50%, #1a4d6a 75%, #0f172a 100%);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradientShift 15s ease infinite;
   color: var(--text);
   min-height: 100%;
   display: flex;
   flex-direction: column;
   padding-bottom: 100px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 header {
