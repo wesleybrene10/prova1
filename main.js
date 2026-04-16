@@ -129,6 +129,31 @@
     if (e.key === 'Enter') adicionar();
   });
 
+  // Modal de Ajuda
+  const modalAjuda = document.getElementById('modal-ajuda');
+  const btnAjuda = document.getElementById('btn-ajuda');
+  const btnFecharAjuda = document.getElementById('btn-fechar-ajuda');
+
+  btnAjuda.addEventListener('click', () => {
+    modalAjuda.classList.add('ativo');
+  });
+
+  btnFecharAjuda.addEventListener('click', () => {
+    modalAjuda.classList.remove('ativo');
+  });
+
+  modalAjuda.addEventListener('click', (e) => {
+    if (e.target === modalAjuda) {
+      modalAjuda.classList.remove('ativo');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      modalAjuda.classList.remove('ativo');
+    }
+  });
+
   // Fluxo de inicialização
   const iniciar = () => {
     carregar();
