@@ -19,6 +19,8 @@ html, body {
   background: var(--bg);
   color: var(--text);
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -38,6 +40,10 @@ header h1 {
   max-width: 900px;
   margin: 0 auto;
   padding: clamp(12px, 4vw, 20px);
+}
+
+main {
+  flex: 1;
 }
 
 .nova-tarefa {
@@ -62,6 +68,22 @@ header h1 {
   outline: none;
   border-color: #06b6d4;
   box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-top: 3px solid #06b6d4;
+  padding: clamp(16px, 3vw, 24px);
+  text-align: center;
+  color: #cbd5e1;
+  font-size: clamp(12px, 2vw, 14px);
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 #btn-adicionar {
