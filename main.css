@@ -1,0 +1,146 @@
+/* style.css */
+:root {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --done: #e5e7eb;
+  --done-text: #6b7280;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100%;
+}
+
+header {
+  padding: 12px 16px;
+  text-align: center;
+  background: #1e40af;
+  color: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nova-tarefa {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+#nova-tarefa {
+  flex: 1;
+  min-width: 240px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#btn-adicionar {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#btn-adicionar:hover {
+  opacity: 0.92;
+}
+
+.contadores {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.lista-tarefas {
+  margin-top: 12px;
+}
+
+#lista-tarefas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.tarefa-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.tarefa-item.concluida {
+  background: var(--done);
+}
+
+.tarefa-item span {
+  font-size: 16px;
+  /* para quando concluída aparecer tachado via JS se necessário */
+}
+
+.tarefa-item.concluida span {
+  text-decoration: line-through;
+  color: var(--done-text);
+}
+
+.acoes {
+  display: flex;
+  gap: 6px;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-concluir {
+  background: #10b981;
+  color: #fff;
+}
+
+.btn-editar {
+  background: #64748b;
+  color: #fff;
+}
+
+.btn-remover {
+  background: #ef4444;
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  #lista-tarefas {
+    grid-template-columns: 1fr;
+  }
+}

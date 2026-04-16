@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='main.css'>
+</head>
+<body>
+    <header>
+    <h1>GDG Londrina - MVP de Tarefas</h1>
+  </header>
+
+  <main class="container">
+    <!-- Adicionar Tarefa -->
+    <section class="nova-tarefa" aria-label="Adicionar nova tarefa">
+      <input id="nova-tarefa" type="text" placeholder="Digite a descrição da tarefa" aria-label="Nova tarefa" />
+      <button id="btn-adicionar" type="button">Adicionar Tarefa:</button>
+    </section>
+
+    <!-- Contadores -->
+    <section class="contadores" aria-label="Contadores de tarefas" style="margin: 16px 0;">
+      <span>Pendentes: <strong id="contador-pendentes">0</strong></span>
+      <span>Concluídas: <strong id="contador-concluidas">0</strong></span>
+    </section>
+
+    <!-- Lista de Tarefas -->
+    <section class="lista-tarefas" aria-label="Lista de tarefas">
+      <ul id="lista-tarefas" role="list"></ul>
+    </section>
+
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
