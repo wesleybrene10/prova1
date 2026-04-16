@@ -1,13 +1,13 @@
 /* style.css */
 :root {
-  --bg: #f7f7fb;
-  --card: #ffffff;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --accent: #4f46e5;
-  --done: #e5e7eb;
-  --done-text: #6b7280;
-  --border: #e5e7eb;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #06b6d4;
+  --done: #334155;
+  --done-text: #cbd5e1;
+  --border: #334155;
 }
 
 * { box-sizing: border-box; }
@@ -24,8 +24,9 @@ html, body {
 header {
   padding: 16px;
   text-align: center;
-  background: #1e40af;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #fff;
+  border-bottom: 3px solid #06b6d4;
 }
 
 header h1 {
@@ -59,8 +60,8 @@ header h1 {
 
 #nova-tarefa:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
 }
 
 #btn-adicionar {
@@ -68,8 +69,8 @@ header h1 {
   padding: clamp(10px, 2vw, 12px) clamp(12px, 3vw, 16px);
   border: none;
   border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
+  background: #06b6d4;
+  color: #0f172a;
   cursor: pointer;
   font-weight: 600;
   font-size: clamp(13px, 2vw, 16px);
@@ -163,23 +164,23 @@ button {
 }
 
 .btn-editar {
-  background: #64748b;
+  background: #3b82f6;
   color: #fff;
 }
 
 .btn-editar:hover,
 .btn-editar:focus {
-  background: #475569;
+  background: #2563eb;
 }
 
 .btn-remover {
-  background: #ef4444;
+  background: #f43f5e;
   color: #fff;
 }
 
 .btn-remover:hover,
 .btn-remover:focus {
-  background: #dc2626;
+  background: #e11d48;
 }
 
 /* Mobile - até 480px */
