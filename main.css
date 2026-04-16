@@ -22,60 +22,81 @@ html, body {
 }
 
 header {
-  padding: 12px 16px;
+  padding: 16px;
   text-align: center;
   background: #1e40af;
   color: #fff;
 }
 
+header h1 {
+  margin: 0;
+  font-size: clamp(1.25rem, 5vw, 2rem);
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: clamp(12px, 4vw, 20px);
 }
 
 .nova-tarefa {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: 8px;
+  padding: clamp(8px, 3vw, 12px);
 }
 
 #nova-tarefa {
-  flex: 1;
-  min-width: 240px;
-  padding: 12px 14px;
+  flex: 1 1 100%;
+  min-width: 200px;
+  padding: clamp(10px, 2vw, 12px) 14px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
+}
+
+#nova-tarefa:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
 #btn-adicionar {
-  padding: 12px 16px;
+  flex: 0 1 auto;
+  padding: clamp(10px, 2vw, 12px) clamp(12px, 3vw, 16px);
   border: none;
   border-radius: 8px;
   background: var(--accent);
   color: #fff;
   cursor: pointer;
   font-weight: 600;
+  font-size: clamp(13px, 2vw, 16px);
+  white-space: nowrap;
 }
 
 #btn-adicionar:hover {
   opacity: 0.92;
 }
 
+#btn-adicionar:active {
+  transform: scale(0.98);
+}
+
 .contadores {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: clamp(12px, 5vw, 20px);
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   color: var(--muted);
+  margin: clamp(12px, 3vw, 16px) 0;
 }
 
 .lista-tarefas {
-  margin-top: 12px;
+  margin-top: clamp(8px, 3vw, 12px);
 }
 
 #lista-tarefas {
@@ -84,14 +105,16 @@ header {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: clamp(8px, 2vw, 10px);
 }
 
 .tarefa-item {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 12px;
+  gap: 12px;
+  padding: clamp(10px, 3vw, 12px);
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #fff;
@@ -102,8 +125,9 @@ header {
 }
 
 .tarefa-item span {
-  font-size: 16px;
-  /* para quando concluída aparecer tachado via JS se necessário */
+  flex: 1 1 150px;
+  font-size: clamp(14px, 2.5vw, 16px);
+  word-break: break-word;
 }
 
 .tarefa-item.concluida span {
@@ -113,15 +137,19 @@ header {
 
 .acoes {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: clamp(4px, 2vw, 6px);
+  justify-content: flex-end;
 }
 
 button {
   border: none;
   border-radius: 6px;
-  padding: 8px 12px;
+  padding: clamp(6px, 2vw, 8px) clamp(8px, 2.5vw, 12px);
   cursor: pointer;
   font-weight: 600;
+  font-size: clamp(12px, 2vw, 14px);
+  transition: opacity 0.2s ease;
 }
 
 .btn-concluir {
@@ -129,14 +157,76 @@ button {
   color: #fff;
 }
 
+.btn-concluir:hover,
+.btn-concluir:focus {
+  background: #059669;
+}
+
 .btn-editar {
   background: #64748b;
   color: #fff;
 }
 
+.btn-editar:hover,
+.btn-editar:focus {
+  background: #475569;
+}
+
 .btn-remover {
   background: #ef4444;
   color: #fff;
+}
+
+.btn-remover:hover,
+.btn-remover:focus {
+  background: #dc2626;
+}
+
+/* Mobile - até 480px */
+@media (max-width: 480px) {
+  .nova-tarefa {
+    flex-direction: column;
+  }
+
+  #nova-tarefa {
+    width: 100%;
+  }
+
+  #btn-adicionar {
+    width: 100%;
+  }
+
+  .tarefa-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acoes {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .acoes button {
+    flex: 1;
+  }
+}
+
+/* Tablets - 481px até 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+/* Desktop - acima de 768px */
+@media (min-width: 769px) {
+  #nova-tarefa {
+    min-width: 240px;
+  }
+
+  #lista-tarefas {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 600px) {
