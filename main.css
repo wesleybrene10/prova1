@@ -36,45 +36,226 @@ html.light-theme, html.light-theme body {
   background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 25%, #f8fafc 50%, #dbeafe 75%, #f8fafc 100%) !important;
   background-size: 400% 400% !important;
   background-attachment: fixed !important;
-  animation: gradientShiftLight 15s ease infinite !important;
+  animation: 
+    gradientShiftLight 20s ease infinite,
+    colorShiftLight 30s ease infinite,
+    hueRotateLight 25s ease infinite,
+    saturateLight 35s ease-in-out infinite !important;
 }
 
 @keyframes gradientShiftLight {
   0% {
     background-position: 0% 50%;
   }
-  25% {
+  10% {
+    background-position: 25% 40%;
+  }
+  20% {
+    background-position: 50% 35%;
+  }
+  30% {
+    background-position: 75% 45%;
+  }
+  40% {
     background-position: 100% 50%;
   }
   50% {
-    background-position: 100% 100%;
+    background-position: 75% 60%;
   }
-  75% {
-    background-position: 0% 100%;
+  60% {
+    background-position: 50% 65%;
+  }
+  70% {
+    background-position: 25% 55%;
+  }
+  80% {
+    background-position: 10% 50%;
+  }
+  90% {
+    background-position: 5% 45%;
   }
   100% {
     background-position: 0% 50%;
   }
 }
 
+@keyframes colorShiftLight {
+  0% {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 25%, #f8fafc 50%, #dbeafe 75%, #f8fafc 100%);
+  }
+  33% {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 25%, #f0f9ff 50%, #d0ecff 75%, #f0f9ff 100%);
+  }
+  66% {
+    background: linear-gradient(135deg, #fafbfc 0%, #f0f4f8 25%, #fafbfc 50%, #e3f2fd 75%, #fafbfc 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 25%, #f8fafc 50%, #dbeafe 75%, #f8fafc 100%);
+  }
+}
+
+@keyframes hueRotateLight {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  25% {
+    filter: hue-rotate(20deg) brightness(1.02);
+  }
+  50% {
+    filter: hue-rotate(40deg) brightness(1.04);
+  }
+  75% {
+    filter: hue-rotate(20deg) brightness(1.02);
+  }
+  100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+
+@keyframes saturateLight {
+  0%, 100% {
+    filter: saturate(100%) contrast(100%);
+  }
+  25% {
+    filter: saturate(105%) contrast(102%);
+  }
+  50% {
+    filter: saturate(110%) contrast(105%);
+  }
+  75% {
+    filter: saturate(105%) contrast(102%);
+  }
+}
+
 * { box-sizing: border-box; }
 
-/* Animação de Fundo Dinâmico */
+/* Animações de Fundo Dinâmico - Múltiplos Keyframes */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
   }
-  25% {
+  10% {
+    background-position: 25% 40%;
+  }
+  20% {
+    background-position: 50% 35%;
+  }
+  30% {
+    background-position: 75% 45%;
+  }
+  40% {
     background-position: 100% 50%;
   }
   50% {
-    background-position: 100% 100%;
+    background-position: 75% 60%;
   }
-  75% {
-    background-position: 0% 100%;
+  60% {
+    background-position: 50% 65%;
+  }
+  70% {
+    background-position: 25% 55%;
+  }
+  80% {
+    background-position: 10% 50%;
+  }
+  90% {
+    background-position: 5% 45%;
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  25% {
+    filter: hue-rotate(45deg) brightness(1.05);
+  }
+  50% {
+    filter: hue-rotate(90deg) brightness(1.1);
+  }
+  75% {
+    filter: hue-rotate(45deg) brightness(1.05);
+  }
+  100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.6), 0 0 30px rgba(59, 130, 246, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    background: linear-gradient(135deg, #0f172a 0%, #1a2f4a 25%, #0f172a 50%, #1a4d6a 75%, #0f172a 100%);
+  }
+  33% {
+    background: linear-gradient(135deg, #0f1a2a 0%, #1a3f5a 25%, #0f2a3a 50%, #1a3d6a 75%, #0f1a2a 100%);
+  }
+  66% {
+    background: linear-gradient(135deg, #1a172a 0%, #2a2f4a 25%, #1a172a 50%, #2a4d6a 75%, #1a172a 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #0f172a 0%, #1a2f4a 25%, #0f172a 50%, #1a4d6a 75%, #0f172a 100%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blurPulse {
+  0%,  100% {
+    backdrop-filter: blur(0px);
+  }
+  25% {
+    backdrop-filter: blur(1px);
+  }
+  50% {
+    backdrop-filter: blur(0.5px);
+  }
+  75% {
+    backdrop-filter: blur(1px);
+  }
+}
+
+@keyframes saturate {
+  0%, 100% {
+    filter: saturate(100%) contrast(100%);
+  }
+  25% {
+    filter: saturate(110%) contrast(105%);
+  }
+  50% {
+    filter: saturate(120%) contrast(110%);
+  }
+  75% {
+    filter: saturate(110%) contrast(105%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }
 
@@ -85,7 +266,11 @@ html, body {
   background: linear-gradient(135deg, #0f172a 0%, #1a2f4a 25%, #0f172a 50%, #1a4d6a 75%, #0f172a 100%);
   background-size: 400% 400%;
   background-attachment: fixed;
-  animation: gradientShift 15s ease infinite;
+  animation: 
+    gradientShift 20s ease infinite,
+    colorShift 30s ease infinite,
+    hueRotate 25s ease infinite,
+    saturate 35s ease-in-out infinite;
   color: var(--text);
   min-height: 100%;
   display: flex;
