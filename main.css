@@ -889,7 +889,7 @@ footer p {
 .btn-ajuda {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 120px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1051,7 +1051,7 @@ footer p {
 @media (max-width: 768px) {
   .btn-ajuda {
     right: 12px;
-    bottom: 80px;
+    bottom: 100px;
     width: 52px;
     height: 52px;
     font-size: 24px;
