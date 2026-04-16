@@ -6,6 +6,7 @@
   const btnAdicionar = document.getElementById('btn-adicionar');
   const contPendentes = document.getElementById('contador-pendentes');
   const contConcluidas = document.getElementById('contador-concluidas');
+  const badgeNumber = document.getElementById('badge-number');
 
   // Dados
   let tarefas = [];
@@ -103,6 +104,7 @@
     const concluidas = tarefas.filter(t => t.concluida).length;
     contPendentes.textContent = pendentes;
     contConcluidas.textContent = concluidas;
+    badgeNumber.textContent = pendentes;
   };
 
   // Adiciona nova tarefa

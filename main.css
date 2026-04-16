@@ -91,6 +91,53 @@ footer p {
   letter-spacing: 0.5px;
 }
 
+.badge-pendentes {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #0f172a;
+  padding: 20px 14px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);
+  z-index: 99;
+  min-width: 70px;
+  font-weight: 600;
+}
+
+#badge-number {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.badge-pendentes span:last-child {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .badge-pendentes {
+    right: 12px;
+    padding: 16px 10px;
+    gap: 4px;
+  }
+
+  #badge-number {
+    font-size: 22px;
+  }
+
+  .badge-pendentes span:last-child {
+    font-size: 9px;
+  }
+}
+
 #btn-adicionar {
   flex: 0 1 auto;
   padding: clamp(10px, 2vw, 12px) clamp(12px, 3vw, 16px);
