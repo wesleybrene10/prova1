@@ -275,7 +275,6 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 150px;
   transition: color 0.3s ease;
 }
 
@@ -878,22 +877,7 @@ button {
   color: #0891b2;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-top: 3px solid var(--accent);
-  padding: clamp(16px, 3vw, 24px);
-  text-align: center;
-  color: #cbd5e1;
-  font-size: clamp(12px, 2vw, 14px);
-  z-index: 100;
-}
 
-footer p {
-  margin: 0;
   font-weight: 500;
   letter-spacing: 0.5px;
 }
@@ -968,14 +952,6 @@ footer p {
 }
 
 @media (max-width: 480px) {
-  html, body {
-    padding-bottom: 150px;
-  }
-
-  footer {
-    padding: 12px;
-  }
-
   .filter-buttons {
     flex-direction: column;
   }
@@ -1048,31 +1024,6 @@ main {
   outline: none;
   border-color: #06b6d4;
   box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-top: 3px solid #06b6d4;
-  padding: clamp(20px, 3vw, 28px);
-  text-align: center;
-  color: #cbd5e1;
-  font-size: clamp(12px, 2vw, 14px);
-  z-index: 100;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
-}
-
-footer p {
-  margin: 0;
-  font-weight: 500;
-  letter-spacing: 0.5px;
 }
 
 .badge-pendentes {
